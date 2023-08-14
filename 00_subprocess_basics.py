@@ -5,7 +5,8 @@
 # 00_subprocess_basics.py
 
 # Dependencies
-import subprocess
+import os
 
-result = subprocess.run(["whoami"], capture_output=True, text=True)
-print(result.stdout)
+result = os.popen('whoami')
+stdout = result.read()
+print(stdout)
